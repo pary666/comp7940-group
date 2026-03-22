@@ -72,7 +72,7 @@ class MongoLogger:
     def find_matching_users(self, current_user_id, interests):
         try:
             cursor = self.user_profiles.find({
-                # "user_id": {"$ne": str(current_user_id)},
+                "user_id": {"$ne": str(current_user_id)},
                 "interests": {"$in": interests}
             })
 
